@@ -40,3 +40,7 @@ Password: VDj7XWm4NMpx9LA!#1234
 Here's an image of a home in action:
 
 ![Home](./home.JPG)
+
+After user login
+
+![Login](./login.JPG)
