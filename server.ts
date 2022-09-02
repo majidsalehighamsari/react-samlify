@@ -71,7 +71,7 @@ export default function server(app) {
   });
 
   app.get('/sp/single_logout/redirect', async (req, res) => {
-    const { context: redirectUrl } = await req.sp.createLogoutRequest(req.idp, 'redirect', { logoutNameID: 'user.passify.io@gmail.com' });
+    const { context: redirectUrl } = await req.sp.createLogoutRequest(req.idp, 'redirect', { logoutNameID: 'demo@fokus.test' });
     console.info('single_logout redirectUrl:', redirectUrl);
     return res.redirect(redirectUrl);
   });
