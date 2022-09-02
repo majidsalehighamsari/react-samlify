@@ -14,11 +14,7 @@ yarn run dev
 ```
 
 
-## Docker
 
-```console
-docker-compose up
-```
 
 
 ## Credential for jumpCloud Login
