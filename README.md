@@ -10,7 +10,14 @@ We will continue to add more common identity providers like EU Login in this exa
 
 ```console
 yarn
-yarn dev
+yarn run dev
+```
+
+
+## Docker
+
+```console
+docker-compose up
 ```
 
 
@@ -29,4 +36,7 @@ Password: VDj7XWm4NMpx9LA!#1234
 
 **Remarks: If SP-initiate SSO works, IDP initiate SSO works as well.**
 
+## Home screeen
+Here's an image of a home in action:
 
+![Home](./home.JPG)
