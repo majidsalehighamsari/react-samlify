@@ -51,18 +51,6 @@ export default function server(app) {
     return res.redirect(redirectUrl);
   });
 
-  app.get('/sso/post', async (req, res) => {
-    const { id, context } = await req.sp.createLoginRequest(req.idp, 'post');
-    // construct form data
-    const endpoint = req.idp.entityMeta.getSingleSignOnService('post') as string;
-    const requestForm = fs
-      .readFileSync('./request.html')
-      .toString()
-      .replace('$ENDPOINT', endpoint)
-      .replace('$CONTEXT', context);
-
-    return res.send(requestForm);
-  });
 
   // endpoint where consuming logout response
   app.post('/sp/sso/logout', async (req, res) => {
@@ -76,14 +64,7 @@ export default function server(app) {
     return res.redirect(redirectUrl);
   });
 
-  // distribute the metadata
-  app.get('/sp/metadata', (req, res) => {
-    res.header('Content-Type', 'text/xml').send(req.sp.getMetadata());
-  });
 
-  app.get('/idp/metadata', (req, res) => {
-    res.header('Content-Type', 'text/xml').send(req.idp.getMetadata());
-  });
 
   // get user profile
   app.get('/profile', (req, res) => {
