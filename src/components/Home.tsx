@@ -53,9 +53,6 @@ export function Home(props: Props) {
     window.location.href = `/sso/redirect${parseQuery()}`;
   };
 
-  const initPostRequest = () => {
-    window.location.href = `/sso/post${parseQuery()}`;
-  };
 
   const viewSpMetadata = () => {
     window.open(`/sp/metadata${parseQuery()}`);
@@ -125,15 +122,6 @@ export function Home(props: Props) {
         <div className="">
           <Button onClick={() => initRedirectRequest()}>
             Login - redirect
-          </Button>
-          <Button onClick={() => initPostRequest()}>
-            Login - post
-          </Button>
-          <Button onClick={() => viewSpMetadata()}>
-            SP Metadata
-          </Button>
-          <Button onClick={() => viewIdpMetadata()}>
-            Login Metadata
           </Button>
         </div>
         <div className="pb2 f6 silver mv3 bb b--black-20 bw1 tc">Options</div>
